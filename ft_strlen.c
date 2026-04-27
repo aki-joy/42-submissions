@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:30:46 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/23 13:37:51 by atajima          ###   ########.fr       */
+/*   Updated: 2026/04/25 18:36:05 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i])
-	{
 		i++;
-	}
 	return (i);
 }
