@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/28 13:17:18 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/04/28 16:13:37 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	word_count(char const *s, char c);
-int	ft_strlen(char const *s, char c);
+int			word_count(char const *s, char c);
+int			ft_strlen(char const *s, char c);
 char const	*insert(char const *s, char c, char **ans);
 
 char	**ft_split(char const *s, char c)
@@ -30,8 +30,8 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (i > j)
 	{
-		insert(s, c, &ans[j]);
-		if(!ans[j])
+		s = insert(s, c, &ans[j]);
+		if (!ans[j])
 			return (NULL);
 		j++;
 	}
@@ -41,7 +41,7 @@ char	**ft_split(char const *s, char c)
 int	word_count(char const *s, char c)
 {
 	int	i;
-	int flag;
+	int	flag;
 	int	count;
 
 	i = 0;
@@ -70,7 +70,7 @@ int	ft_strlen(char const *s, char c)
 	len = 0;
 	while (*s == c)
 		s++;
-	while (s[i] != c)
+	while (s[i] != c && s[i])
 	{
 		i++;
 		len++;
@@ -91,6 +91,8 @@ char const	*insert(char const *s, char c, char **ans)
 	if (!ans[i])
 		return (NULL);
 	ans[i][len] = '\0';
+	while (*s == c)
+		s++;
 	while (j < len)
 	{
 		ans[i][j] = *s;
@@ -101,30 +103,30 @@ char const	*insert(char const *s, char c, char **ans)
 	return (s);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(int argc, char **argv)
-{
-	char	**splited;
-	int		i;
-	int		count;
+// int	main(int argc, char **argv)
+// {
+// 	char	**splited;
+// 	int		i;
+// 	int		count;
 
-	i = 0;
-	if (argc != 4)
-		return (1);
-	count = atoi(argv[3]);
-	splited = ft_split(argv[1], argv[2][0]);
-	while (i <= count)
-	{
-		printf ("%s\n", splited[i]);
-		i++;
-	}
-	i = 0;
-	while (i <= count)
-	{
-		free(splited[i]);
-		i++;
-	}
-	free(splited);
-	return (0);
-}
+// 	i = 0;
+// 	if (argc != 4)
+// 		return (1);
+// 	count = atoi(argv[3]);
+// 	splited = ft_split(argv[1], argv[2][0]);
+// 	while (i < count)
+// 	{
+// 		printf("%s\n", splited[i]);
+// 		i++;
+// 	}
+// 	i = 0;
+// 	while (i <= count)
+// 	{
+// 		free(splited[i]);
+// 		i++;
+// 	}
+// 	free(splited);
+// 	return (0);
+// }
