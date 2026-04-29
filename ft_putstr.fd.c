@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 21:29:21 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/29 10:27:30 by akihiro          ###   ########.fr       */
+/*   Created: 2026/04/29 10:28:48 by akihiro           #+#    #+#             */
+/*   Updated: 2026/04/29 10:29:57 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar_fd(char c, int fd)
+void ft_putstr_fd(char *s, int fd)
 {
-    write (fd, &c, 1);
+    while (*s)
+    {
+        write (fd, s, 1);
+        s++;
+    }
 }

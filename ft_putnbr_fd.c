@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 21:29:21 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/29 10:27:30 by akihiro          ###   ########.fr       */
+/*   Created: 2026/04/29 10:38:54 by akihiro           #+#    #+#             */
+/*   Updated: 2026/04/29 10:48:00 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar_fd(char c, int fd)
+void ft_putnbr_fd(int n, int fd)
 {
-    write (fd, &c, 1);
+    char    c;
+
+    if (n > 10)
+        ft_putnbr_fd(n /10, fd);
+    c = n % 10 + '0';
+    write(fd, &c, 1);
+}
+int main(void)
+{
+    int n = 123;
+    int fd = 1;
+    ft_putnbr_fd(n, fd);
+    return (0);
 }
