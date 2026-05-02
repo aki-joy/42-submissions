@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 14:59:43 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/02 15:57:14 by atajima          ###   ########.fr       */
+/*   Created: 2026/05/02 13:27:33 by atajima           #+#    #+#             */
+/*   Updated: 2026/05/02 16:00:03 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list    *ft_lstlist(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    
+	
 }
