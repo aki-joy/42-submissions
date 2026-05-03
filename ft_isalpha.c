@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:38:46 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:07:31 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:30:40 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	if ('a' <= c && c <= 'z')
-		return (1);
-	else if ('A' <= c && c <= 'Z')
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
 		return (1);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 11:53:38 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/03 11:55:05 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/03 20:26:34 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_list  *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-    
+	
 }

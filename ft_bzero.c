@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:40:06 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:06:02 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:23:01 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	bzero(void *s, size_t n)
 	p = (unsigned char *)s;
 	while (n > 0)
 	{
-		n--;
+		*p = '\0';
 		p++;
+		n--;
 	}
 }

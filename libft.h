@@ -11,4 +11,6 @@ typedef struct s_list
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
 #endif

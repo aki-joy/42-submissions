@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:39:15 by username          #+#    #+#             */
-/*   Updated: 2026/05/03 19:07:16 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:31:26 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if ('a' <= c && c <= 'z')
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
 		return (1);
-	if ('A' <= c && c <= 'Z')
-		return (1);
-	if ('0' <= c && c <= '9')
+	else if ('0' <= c && c <= '9')
 		return (1);
 	return (0);
 }
