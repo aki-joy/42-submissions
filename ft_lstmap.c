@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 14:59:43 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/02 19:40:43 by akihiro          ###   ########.fr       */
+/*   Created: 2026/05/03 11:53:38 by akihiro           #+#    #+#             */
+/*   Updated: 2026/05/03 11:55:05 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list    *ft_lstlast(t_list *lst)
+t_list  *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-    if (lst == NULL)
-        return (NULL);
-    while (lst->next != NULL)
-        lst = lst->next;
-    return (lst);
+    
 }

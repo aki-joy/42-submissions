@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/02 16:54:22 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/02 19:15:38 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int			word_count(char const *s, char c);
 int			ft_strlen(char const *s, char c);
@@ -29,7 +28,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ans[i] = NULL;
 	j = 0;
-	while (i > j)
+	while (j < i)
 	{
 		s = insert(s, c, &ans[j]);
 		if (!ans[j])
@@ -88,7 +87,6 @@ char const	*insert(char const *s, char c, char **ans)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s, c);
-	printf ("%d\n", len);
 	ans[i] = malloc(sizeof(char) * (len + 1));
 	if (!ans[i])
 		return (NULL);
