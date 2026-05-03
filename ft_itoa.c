@@ -6,11 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/28 17:41:14 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:08:01 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		count_digit(long num, int sign);
 void	convert(char *str, long num, int *i, int sign);

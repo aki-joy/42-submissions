@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:30:46 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 18:36:05 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:10:13 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

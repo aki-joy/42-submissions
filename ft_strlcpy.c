@@ -6,11 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 16:25:48 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 18:35:53 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:10:06 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

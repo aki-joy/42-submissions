@@ -6,11 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 18:36:09 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 18:44:25 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:10:23 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2, size_t n)
 {

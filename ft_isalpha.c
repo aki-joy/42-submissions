@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:38:46 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/23 15:33:21 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:07:31 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

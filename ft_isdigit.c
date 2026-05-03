@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:39:02 by username          #+#    #+#             */
-/*   Updated: 2026/04/23 15:33:39 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:07:44 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:50:30 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/27 16:32:22 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:09:54 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(const char *str);
 

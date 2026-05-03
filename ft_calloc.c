@@ -6,13 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 11:56:21 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/29 12:31:06 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:06:33 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdint.h>
+#include "libft.h"
 
 void *ft_calloc(size_t count, size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:42:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 16:25:38 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:08:53 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*memmove(void *dest, const void *src, size_t n)
 {

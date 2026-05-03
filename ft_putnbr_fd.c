@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:38:54 by akihiro           #+#    #+#             */
-/*   Updated: 2026/04/29 10:48:00 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:09:19 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void ft_putnbr_fd(int n, int fd)
 {
@@ -21,10 +21,10 @@ void ft_putnbr_fd(int n, int fd)
     c = n % 10 + '0';
     write(fd, &c, 1);
 }
-int main(void)
-{
-    int n = 123;
-    int fd = 1;
-    ft_putnbr_fd(n, fd);
-    return (0);
-}
+// int main(void)
+// {
+//     int n = 123;
+//     int fd = 1;
+//     ft_putnbr_fd(n, fd);
+//     return (0);
+// }

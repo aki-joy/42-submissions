@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 19:22:31 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 20:52:56 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:11:19 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

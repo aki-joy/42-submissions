@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 18:44:32 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/25 19:00:30 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:10:29 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

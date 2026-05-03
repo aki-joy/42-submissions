@@ -6,12 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:17:58 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/27 15:48:15 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:11:07 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_malloc(unsigned int start, size_t len, int s_len);
 

@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:15:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/24 19:19:42 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:07:48 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_isprint(int c)
 {

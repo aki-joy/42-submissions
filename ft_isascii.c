@@ -6,9 +6,11 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:24:08 by atajima           #+#    #+#             */
-/*   Updated: 2026/04/23 15:34:30 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/03 19:07:38 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

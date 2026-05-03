@@ -10,4 +10,5 @@ typedef struct s_list
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdint.h>
 #endif
