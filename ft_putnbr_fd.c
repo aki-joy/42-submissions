@@ -6,7 +6,7 @@
 /*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:38:54 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/04 13:27:19 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:47:02 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	long	num;
 	char	c;
 
-	if (n > 10)
+	num = n;
+	if (num < 0)
+	{
+		write (fd, "-", 1);
+		num *= -1;
+	}
+	if (n >= 10)
 		ft_putnbr_fd(n / 10, fd);
 	c = n % 10 + '0';
 	write(fd, &c, 1);

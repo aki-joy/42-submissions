@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 18:36:09 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:10:23 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:25:22 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0)
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-		n--;
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		if (s1[i] == '\0')
+			return (0);
+		i++;	
 	}
 	return (0);
 }

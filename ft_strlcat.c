@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:10:34 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:10:01 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:38:04 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	if (size <= len1)
 		return (size + len2);
 	i = 0;
-	while (size - 1 > len1 + i)
+	while (src[i] && size - 1 > len1 + i)
 	{
 		dest[len1 + i] = src[i];
 		i++;

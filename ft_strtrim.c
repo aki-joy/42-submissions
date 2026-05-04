@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:32:45 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 18:03:25 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/05 00:53:32 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s1);
+int	ft_strlen_trim(const char *s1);
 int	check_set(const char c, const char *set);
 
 char	*ft_strtrim(const char *s1, const char *set)
@@ -23,7 +23,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		i;
 
 	front = 0;
-	back = ft_strlen(s1) - 1;
+	back = ft_strlen_trim(s1) - 1;
 	while (check_set(s1[front], set))
 		front++;
 		// write (1, &s1[front], 1);
@@ -58,7 +58,7 @@ int	check_set(const char c, const char *set)
 	return (0);
 }
 
-int	ft_strlen(const char *s1)
+int	ft_strlen_trim(const char *s1)
 {
 	int	len;
 

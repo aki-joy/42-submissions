@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:17:58 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 19:49:18 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:26:24 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[s_len])
 		s_len++;
-		printf ("%zu\n", s_len);
+	//	printf ("%zu\n", s_len);
 	res = copy(start, len, s_len);
 	if (!res)
 		return (NULL);

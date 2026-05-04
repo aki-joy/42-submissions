@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 18:44:32 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:10:29 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:41:14 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
 
-	p = (char *)s;
+	p = NULL;
 	while (*s)
 	{
 		if (*s == c)
 			p = (char *)s;
 		s++;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (p);
 }
 // #include <stdio.h>

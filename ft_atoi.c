@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 13:22:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 15:15:31 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:28:57 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while (9 <= str[i] && str[i] <= 13 || str[i] == 32)
+	while ((9 <= str[i] && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -37,9 +37,9 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-int main(void)
-{
-	char nbr[] = "  213a45";
-	printf("%d\n", ft_atoi(nbr));
-	return (0);
-}
+//int main(void)
+//{
+//	char nbr[] = "  213a45";
+//	printf("%d\n", ft_atoi(nbr));
+//	return (0);
+//}

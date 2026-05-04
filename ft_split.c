@@ -6,15 +6,16 @@
 /*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 13:25:07 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/05 01:04:40 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int			word_count(char const *s, char c);
-int			ft_strlen(char const *s, char c);
+int			ft_strlen_split(char const *s, char c);
 char const	*insert(char const *s, char c, char **ans);
+void	free_all(char ** ans, int j);
 
 char	**ft_split(char const *s, char c)
 {
@@ -32,7 +33,10 @@ char	**ft_split(char const *s, char c)
 	{
 		s = insert(s, c, &ans[j]);
 		if (!ans[j])
+		{
+			free_all(ans, j);
 			return (NULL);
+		}
 		j++;
 	}
 	return (ans);
@@ -61,7 +65,7 @@ int	word_count(char const *s, char c)
 	return (count);
 }
 
-int	ft_strlen(char const *s, char c)
+int	ft_strlen_split(char const *s, char c)
 {
 	int	i;
 	int	len;
@@ -86,7 +90,7 @@ char const	*insert(char const *s, char c, char **ans)
 
 	i = 0;
 	j = 0;
-	len = ft_strlen(s, c);
+	len = ft_strlen_split(s, c);
 	ans[i] = malloc(sizeof(char) * (len + 1));
 	if (!ans[i])
 		return (NULL);
@@ -103,6 +107,15 @@ char const	*insert(char const *s, char c, char **ans)
 	return (s);
 }
 
+void	free_all(char ** ans, int j)
+{
+	while (j >= 0)
+	{
+		free(ans[j]);
+		j--;
+	}
+	free(ans);
+}
 //int	main(int argc, char **argv)
 //{
 //	char	**splited;

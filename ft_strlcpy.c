@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 16:25:48 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:10:06 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/05 01:05:25 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while (src[i])
 		i++;
 	if (size == 0)
-		return (0);
-	while (*src && size > 1)
+		return (i);
+	while (src[j] && size - 1 > j)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		size--;
+		dest[j] = src[j];
+		j++;
 	}
-	*dest = '\0';
+	dest[j] = '\0';
 	return (i);
 }
 

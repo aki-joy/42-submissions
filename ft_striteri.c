@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 20:44:22 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:09:47 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 23:43:23 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	while (s[i])
 	{
-		ft_striteri(i, &s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
