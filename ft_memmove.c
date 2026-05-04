@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:42:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:08:53 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 13:18:46 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 void	*memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*p;
+	unsigned char		*d;
 	const unsigned char	*s;
+	size_t				i;
 
-	p = (unsigned char *)dest;
+	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-	if (p < s)
+	i = 0;
+	if (d < s)
+	{
+		while (n > i)
+		{
+			d[i] = s[i];
+			i++;
+		}
+		return (dest);
+	}
+	else
 	{
 		while (n > 0)
 		{
-			*p = *s;
-			p++;
-			s++;
+			d[n - 1] = s[n - 1];
 			n--;
 		}
 		return (dest);
 	}
-	while (n > 0)
-	{
-		p[n - 1] = s[n - 1];
-		n--;
-	}
-	return (dest);
 }
