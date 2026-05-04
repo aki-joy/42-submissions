@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:19:48 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 13:06:25 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:58:50 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*p;
 	size_t			i;
 
+	if (!s)
+		return ;
 	p = (unsigned char *)s;
 	i = 0;
 	while (n > i)

@@ -6,58 +6,59 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:32:45 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:10:55 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 18:03:25 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_set(const char *a1, const char *set, int len);
+int	ft_strlen(const char *s1);
+int	check_set(const char c, const char *set);
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
+	char	*res;
+	int		front;
+	int		back;
 	int		i;
-	int		len;
-	int		flag;
-	char	*str;
 
-	i = 0;
-	len = ft_strlen(s1);
-	flag = check_set(s1, set, len);
-	if (flag == 'I' || flag == 'L')
-		len -= 1;
-	if (flag == 'B')
-		len -= 2;
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
+	front = 0;
+	back = ft_strlen(s1) - 1;
+	while (check_set(s1[front], set))
+		front++;
+		// write (1, &s1[front], 1);
+		// write (1, "\n", 1);
+	while (check_set(s1[back], set))
+		back--;
+		// write (1, &s1[back], 1);
+		// write (1, "\n", 1);
+	res = malloc(sizeof(char) * (back - front + 2));
+	if (!res)
 		return (NULL);
-	while (*s1)
-	{
-		
-	}
-}
-
-int	check_set(const char *s1, const char *set, int len)
-{
-	int		i;
-	char	flag;
-
 	i = 0;
-	flag = 'N';
-	while (set[i])
+	while (front + i <= back)
 	{
-		if (s1[0] == set[i])
-			flag = 'I';
-		if (s1[len - 1] == set[i] && flag == 0)
-			flag = 'L';
-		if (s1[len - 1] == set[i] && flag == 1)
-			flag = 'B';
+		res[i] = s1[front + i];
 		i++;
 	}
-	return (flag);
+	res[i] = '\0';
+	return (res);
+}
+int	check_set(const char c, const char *set)
+{
+	int		i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-int	ft_strlen(char *s1)
+int	ft_strlen(const char *s1)
 {
 	int	len;
 
@@ -67,15 +68,14 @@ int	ft_strlen(char *s1)
 	return (len);
 }
 
-#include <stdio.h>
-int	main(int argc, char **argv)
-{
-	char	*trimmed;
+// int	main(int argc, char **argv)
+// {
+// 	char	*trimmed;
 
-	if (argc != 3)
-		return (1);
-	trimmed = ft_strtrim(argv[1], argv[2]);
-	printf("%s\n", trimmed);
-	free(trimmed);
-	return (0);
-}
+// 	if (argc != 3)
+// 		return (1);
+// 	trimmed = ft_strtrim(argv[1], argv[2]);
+// 	printf("%s\n", trimmed);
+// 	free(trimmed);
+// 	return (0);
+// }

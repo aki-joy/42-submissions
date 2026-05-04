@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 14:59:43 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/03 20:26:30 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:44:54 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	if (!lst)
 		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;

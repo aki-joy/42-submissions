@@ -6,17 +6,15 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:17:58 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:11:07 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 18:41:39 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_malloc(unsigned int start, size_t len, int s_len);
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char	*res;
 	size_t	i;
 	size_t	s_len;
 
@@ -26,45 +24,41 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[s_len])
 		s_len++;
-	str = ft_malloc(start, len, s_len);
-	if (!str)
-		return (NULL);
-	if (start >= s_len)
-		return (str);
-	while (i < len && s[start + i])
+	res = copy(s, start, len, s_len);
+	if (*res == '\0')
+		return (res);
+	while (s[s_len + i] && i < len)
 	{
-		str[i] = s[start + i];
-		i++;
+		
 	}
-	return (str);
 }
 
-char	*ft_malloc(unsigned int start, size_t len, int s_len)
+char	*copy(char const *s, unsigned int start, size_t len, size_t s_len)
 {
-	char	*str;
+	char	*res;
 
-	if (s_len <= start)
+	if (s_len - 1 <= start)
 	{
-		str = malloc(sizeof(char) * 1);
-		if (!str)
+		res = malloc(1);
+		if (!res)
 			return (NULL);
-		str[0] = '\0';
-		return (str);
+		*res = '\0';
 	}
-	if (s_len < start + len)
+	else if (s_len - 1 < start + len)
 	{
-		str = malloc(sizeof(char) * (s_len - start + 1));
-		if (!str)
+		res = malloc(sizeof(char) * (start + len - s_len + 2));
+		if (!res)
 			return (NULL);
-		str[s_len - start] = '\0';
-		return (str);
 	}
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
+	else
+	{
+	res = malloc(sizeof(char) * (start + len + 1));
+	if (!res)
 		return (NULL);
-	str[len] = '\0';
-	return (str);
+	}
+	return (res);
 }
+
 
 // #include <stdio.h>
 

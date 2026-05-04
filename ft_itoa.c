@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 20:21:12 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:26:13 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ void	convert(char *res, long num, int *i)
 	(*i)++;
 }
 
-// int	main(void)
-// {
-// 	int nbr = -2147483648;
-// 	printf("%s\n", ft_itoa(nbr));
-// 	return (0);
-// }
+int	main(void)
+{
+	int nbr = 2147483647;
+	printf("%s\n", ft_itoa(nbr));
+	return (0);
+}

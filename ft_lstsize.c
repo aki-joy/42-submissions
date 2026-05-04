@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 15:47:57 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/04 13:24:49 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:56:22 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	if (lst)
-		return (count);
-	while (lst != NULL)
+	while (lst)
 	{
 		lst = lst->next;
 		count++;

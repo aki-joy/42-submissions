@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:03:33 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:09:35 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 16:12:43 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (*s != (char)c)
 	{
-		if (*s == c)
-			return (s);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	if (*s == '\0')
-		return (s);
-	return (NULL);
+	return ((char *)s);
 }

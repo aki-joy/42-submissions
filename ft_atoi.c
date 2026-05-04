@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 13:22:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/03 19:19:41 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:15:31 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-// int main(void)
-// {
-// 	char nbr[] = "0";
-// 	printf("%d\n", ft_atoi(nbr));
-// 	return (0);
-// }
+int main(void)
+{
+	char nbr[] = "  213a45";
+	printf("%d\n", ft_atoi(nbr));
+	return (0);
+}
