@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 17:15:50 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 17:35:32 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,34 @@
 
 static int			word_count(char const *s, char c);
 static int			ft_strlen_split(char const *s, char c);
-static char const	*insert(char const *s, char c, char *ans);
+static char			*insert(char const *s, char c, char *ans);
 static void			free_all(char **ans, int j);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**ans;
 	int		i;
-	int		j;
 
 	if (!s)
 		return (NULL);
-	i = word_count(s, c);
-	ans = malloc(sizeof(char *) * (i + 1));
+	ans = malloc(sizeof(char *) * (word_count(s, c) + 1));
 	if (!ans)
 		return (NULL);
-	ans[i] = NULL;
-	j = 0;
-	while (j < i)
+	ans[word_count(s, c)] = NULL;
+	i = 0;
+	while (i < word_count(s, c))
 	{
-		s = insert(s, c, ans[j]);
-		if (!ans[j])
+		while (*s == c)
+			s++;
+		ans[i] = insert(s, c, ans[i]);
+		if (!ans[i])
 		{
-			free_all(ans, j);
+			free_all(ans, i);
 			return (NULL);
 		}
-		j++;
+		while (*s && *s != c)
+			s++;
+		i++;
 	}
 	return (ans);
 }
@@ -84,7 +86,7 @@ static int	ft_strlen_split(char const *s, char c)
 	return (len);
 }
 
-static char const	*insert(char const *s, char c, char *ans)
+static char	*insert(char const *s, char c, char *ans)
 {
 	int	i;
 	int	len;
@@ -95,16 +97,13 @@ static char const	*insert(char const *s, char c, char *ans)
 	if (!ans)
 		return (NULL);
 	ans[len] = '\0';
-	while (*s == c)
-		s++;
 	while (i < len)
 	{
-		ans[i] = *s;
+		ans[i] = s[i];
 		i++;
-		s++;
 	}
 	ans[i] = '\0';
-	return (s);
+	return (ans);
 }
 
 static void	free_all(char **ans, int j)

@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:37:37 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 17:25:34 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static int	count_digit(long num)
 {
 	int	count;
 
-	count = 0;
-	while (num > 0)
+	count = 1;
+	while (num >= 10)
 	{
 		num /= 10;
 		count++;
