@@ -6,14 +6,14 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:15:04 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:37:37 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int		count_digit(long num);
-static void	convert(char *res, long num, int *i);
+static void		convert(char *res, long num, int *i);
 
 char	*ft_itoa(int n)
 {

@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:17:58 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:12:10 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:39:30 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[s_len])
 		s_len++;
-	//	printf ("%zu\n", s_len);
 	res = alloc_substr(start, len, s_len);
 	if (!res)
 		return (NULL);

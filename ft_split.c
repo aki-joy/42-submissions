@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:32:30 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 17:15:50 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int			word_count(char const *s, char c);
 static int			ft_strlen_split(char const *s, char c);
-static char const	*insert(char const *s, char c, char **ans);
-static void	free_all(char **ans, int j);
+static char const	*insert(char const *s, char c, char *ans);
+static void			free_all(char **ans, int j);
 
 char	**ft_split(char const *s, char c)
 {
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (j < i)
 	{
-		s = insert(s, c, &ans[j]);
+		s = insert(s, c, ans[j]);
 		if (!ans[j])
 		{
 			free_all(ans, j);
@@ -84,7 +84,7 @@ static int	ft_strlen_split(char const *s, char c)
 	return (len);
 }
 
-static char const	*insert(char const *s, char c, char **ans)
+static char const	*insert(char const *s, char c, char *ans)
 {
 	int	i;
 	int	len;
@@ -107,7 +107,7 @@ static char const	*insert(char const *s, char c, char **ans)
 	return (s);
 }
 
-static void	free_all(char ** ans, int j)
+static void	free_all(char **ans, int j)
 {
 	while (j >= 0)
 	{

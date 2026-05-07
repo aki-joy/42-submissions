@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:32:45 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:17:24 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:54:19 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,26 @@
 
 static int	ft_strlen_trim(const char *s1);
 static int	check_set(const char c, const char *set);
+static char	*make_trimmed(const char *s1, int front, int back);
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*res;
 	int		front;
 	int		back;
-	int		i;
 
 	front = 0;
-	back = ft_strlen_trim(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
 	while (s1[front] && check_set(s1[front], set))
 		front++;
 	if (s1[front] == '\0')
 		return (ft_strdup(""));
+	back = ft_strlen_trim(s1) - 1;
 	while (check_set(s1[back], set))
 		back--;
-	res = malloc(sizeof(char) * (back - front + 2));
-	if (!res)
-		return (NULL);
-	i = 0;
-	while (front + i <= back)
-	{
-		res[i] = s1[front + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	return (make_trimmed(s1, front, back));
 }
+
 static int	check_set(const char c, const char *set)
 {
 	int		i;
@@ -56,6 +46,24 @@ static int	check_set(const char c, const char *set)
 		i++;
 	}
 	return (0);
+}
+
+static char	*make_trimmed(const char *s1, int front, int back)
+{
+	char	*res;
+	int		i;
+
+	i = 0;
+	res = malloc(sizeof(char) * (back - front + 2));
+	if (!res)
+		return (NULL);
+	while (i + front <= back)
+	{
+		res[i] = s1[i + front];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
 static int	ft_strlen_trim(const char *s1)
