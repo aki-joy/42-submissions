@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:32:45 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/05 00:53:32 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:17:24 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen_trim(const char *s1);
-int	check_set(const char c, const char *set);
+static int	ft_strlen_trim(const char *s1);
+static int	check_set(const char c, const char *set);
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
@@ -24,14 +24,14 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 	front = 0;
 	back = ft_strlen_trim(s1) - 1;
-	while (check_set(s1[front], set))
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[front] && check_set(s1[front], set))
 		front++;
-		// write (1, &s1[front], 1);
-		// write (1, "\n", 1);
+	if (s1[front] == '\0')
+		return (ft_strdup(""));
 	while (check_set(s1[back], set))
 		back--;
-		// write (1, &s1[back], 1);
-		// write (1, "\n", 1);
 	res = malloc(sizeof(char) * (back - front + 2));
 	if (!res)
 		return (NULL);
@@ -44,7 +44,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	res[i] = '\0';
 	return (res);
 }
-int	check_set(const char c, const char *set)
+static int	check_set(const char c, const char *set)
 {
 	int		i;
 
@@ -58,7 +58,7 @@ int	check_set(const char c, const char *set)
 	return (0);
 }
 
-int	ft_strlen_trim(const char *s1)
+static int	ft_strlen_trim(const char *s1)
 {
 	int	len;
 

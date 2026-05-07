@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 13:22:28 by akihiro           #+#    #+#             */
-/*   Updated: 2026/05/04 13:22:51 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:06:28 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <unistd.h>
-#include <stdio.h>
 typedef struct s_list
 {
 	void			*content;

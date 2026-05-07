@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:37:55 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 13:10:07 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:34:42 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	p = (unsigned char *)dest;
 	s = (const unsigned char *)src;
 	i = 0;
+	if (!dest && !src)
+		return (NULL);
 	while (n > i)
 	{
 		p[i] = s[i];

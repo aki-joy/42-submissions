@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/05 01:04:40 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:32:30 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			word_count(char const *s, char c);
-int			ft_strlen_split(char const *s, char c);
-char const	*insert(char const *s, char c, char **ans);
-void	free_all(char ** ans, int j);
+static int			word_count(char const *s, char c);
+static int			ft_strlen_split(char const *s, char c);
+static char const	*insert(char const *s, char c, char **ans);
+static void	free_all(char **ans, int j);
 
 char	**ft_split(char const *s, char c)
 {
@@ -23,6 +23,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	i = word_count(s, c);
 	ans = malloc(sizeof(char *) * (i + 1));
 	if (!ans)
@@ -42,7 +44,7 @@ char	**ft_split(char const *s, char c)
 	return (ans);
 }
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	i;
 	int	flag;
@@ -65,15 +67,15 @@ int	word_count(char const *s, char c)
 	return (count);
 }
 
-int	ft_strlen_split(char const *s, char c)
+static int	ft_strlen_split(char const *s, char c)
 {
 	int	i;
 	int	len;
 
 	i = 0;
 	len = 0;
-	while (*s == c)
-		s++;
+	while (s[i] == c)
+		i++;
 	while (s[i] != c && s[i])
 	{
 		i++;
@@ -82,32 +84,30 @@ int	ft_strlen_split(char const *s, char c)
 	return (len);
 }
 
-char const	*insert(char const *s, char c, char **ans)
+static char const	*insert(char const *s, char c, char **ans)
 {
 	int	i;
-	int	j;
 	int	len;
 
 	i = 0;
-	j = 0;
 	len = ft_strlen_split(s, c);
-	ans[i] = malloc(sizeof(char) * (len + 1));
-	if (!ans[i])
+	ans = malloc(sizeof(char) * (len + 1));
+	if (!ans)
 		return (NULL);
-	ans[i][len] = '\0';
+	ans[len] = '\0';
 	while (*s == c)
 		s++;
-	while (j < len)
+	while (i < len)
 	{
-		ans[i][j] = *s;
-		j++;
+		ans[i] = *s;
+		i++;
 		s++;
 	}
-	ans[i][j] = '\0';
+	ans[i] = '\0';
 	return (s);
 }
 
-void	free_all(char ** ans, int j)
+static void	free_all(char ** ans, int j)
 {
 	while (j >= 0)
 	{

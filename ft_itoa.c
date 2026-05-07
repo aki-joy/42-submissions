@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/05 01:03:19 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 16:15:04 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_digit(long num);
-void	convert(char *res, long num, int *i);
+static int		count_digit(long num);
+static void	convert(char *res, long num, int *i);
 
 char	*ft_itoa(int n)
 {
@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 		sign = -1;
 		num = num * -1;
 	}
-	res = malloc(sizeof(char) * (count_digit(num) + 1));
+	res = malloc(sizeof(char) * (count_digit(num) + (sign < 0) + 1));
 	if (!res)
 		return (NULL);
 	if (sign < 0)
@@ -43,15 +43,11 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-int	count_digit(long num)
+static int	count_digit(long num)
 {
 	int	count;
 
 	count = 0;
-	if (num == 0)
-		count++;
-	if (num < -1)
-		count++;
 	while (num > 0)
 	{
 		num /= 10;
@@ -60,7 +56,7 @@ int	count_digit(long num)
 	return (count);
 }
 
-void	convert(char *res, long num, int *i)
+static void	convert(char *res, long num, int *i)
 {
 	if (num >= 10)
 		convert(res, num / 10, i);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 20:22:15 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/04 23:42:55 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/07 15:50:38 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 		i++;
-	res = malloc(sizeof(char) * i + 1);
+	res = malloc(sizeof(char) * (i + 1));
 	if (!res)
 		return (NULL);
+	i = 0;
 	while (s[i])
 	{
 		res[i] = f(i, s[i]);
