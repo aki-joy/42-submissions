@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 17:25:34 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:34:04 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,3 @@ static void	convert(char *res, long num, int *i)
 	(*i)++;
 }
 
-//int	main(void)
-//{
-//	int nbr = 2147483647;
-//	printf("%s\n", ft_itoa(nbr));
-//	return (0);
-//}

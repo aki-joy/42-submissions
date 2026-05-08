@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 16:32:45 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:54:19 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:40:15 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,3 @@ static int	ft_strlen_trim(const char *s1)
 		len++;
 	return (len);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	char	*trimmed;
-
-// 	if (argc != 3)
-// 		return (1);
-// 	trimmed = ft_strtrim(argv[1], argv[2]);
-// 	printf("%s\n", trimmed);
-// 	free(trimmed);
-// 	return (0);
-// }

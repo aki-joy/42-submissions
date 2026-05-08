@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 17:35:32 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:36:09 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,28 +115,3 @@ static void	free_all(char **ans, int j)
 	}
 	free(ans);
 }
-//int	main(int argc, char **argv)
-//{
-//	char	**splited;
-//	int		i;
-//	int		count;
-
-//	i = 0;
-//	if (argc != 4)
-//		return (1);
-//	count = atoi(argv[3]);
-//	splited = ft_split(argv[1], argv[2][0]);
-//	while (i < count)
-//	{
-//		printf("%s\n", splited[i]);
-//		i++;
-//	}
-//	i = 0;
-//	while (i <= count)
-//	{
-//		free(splited[i]);
-//		i++;
-//	}
-//	free(splited);
-//	return (0);
-//}

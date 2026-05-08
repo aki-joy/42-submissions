@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:10:34 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:38:36 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:37:03 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[len1 + i] = '\0';
 	return (len1 + len2);
 }
-//#include <stdio.h>
-// int	main(void)
-// {
-// 	char	dest[10] = "abc";
-// 	char	src[] = "def";
-// 	size_t	size = 6;
-
-// 	printf("%d\n", (int)ft_strlcat(dest, src, size));
-// 	printf("%s", dest);
-// 	return (0);
-// }

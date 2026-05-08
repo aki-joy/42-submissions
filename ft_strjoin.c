@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 15:50:30 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:03:47 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:36:37 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,3 @@ static int	ft_strlen_join(const char *str)
 		len++;
 	return (len);
 }
-
-// #include <stdio.h>
-
-// int	main(int argc, char **argv)
-// {
-// 	char	*joined;
-
-// 	if (argc != 3)
-// 		return (1);
-// 	joined = ft_strjoin(argv[1], argv[2]);
-// 	printf("%s\n", joined);
-// 	free(joined);
-// 	return (0);
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:17:58 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/07 16:39:30 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/08 13:40:35 by akihiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,3 @@ static char	*alloc_substr(unsigned int start, size_t len, size_t s_len)
 	}
 	return (res);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	size_t		start;
-// 	size_t		len;
-// 	char	*sub;
-
-// 	if (argc != 4)
-// 		return (0);
-// 	start = atoi(argv[2]);
-// 	len = atoi(argv[3]);
-// 	sub = ft_substr(argv[1], start, len);
-// 	if (!sub)
-// 		return (1);
-// 	printf ("%s\n", sub);
-// 	free(sub);
-// 	return (0);
-// }
