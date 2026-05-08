@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 13:22:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/08 13:34:22 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/08 18:00:56 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	return (num * sign);
+	return ((int)(num * sign));
 }

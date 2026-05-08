@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 16:14:10 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/08 13:34:04 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/08 18:01:32 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,3 @@ static void	convert(char *res, long num, int *i)
 	res[*i] = num % 10 + '0';
 	(*i)++;
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihiro <akihiro@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:04:36 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/08 13:36:09 by akihiro          ###   ########.fr       */
+/*   Updated: 2026/05/08 18:47:54 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,25 @@ char	**ft_split(char const *s, char c)
 {
 	char	**ans;
 	int		i;
+	int		count;
 
 	if (!s)
 		return (NULL);
-	ans = malloc(sizeof(char *) * (word_count(s, c) + 1));
+	count = word_count(s, c);
+	ans = malloc(sizeof(char *) * (count + 1));
 	if (!ans)
 		return (NULL);
-	ans[word_count(s, c)] = NULL;
-	i = 0;
-	while (i < word_count(s, c))
+	ans[count] = NULL;
+	i = -1;
+	while (++i < count)
 	{
 		while (*s == c)
 			s++;
 		ans[i] = insert(s, c, ans[i]);
 		if (!ans[i])
-		{
-			free_all(ans, i);
-			return (NULL);
-		}
+			return (free_all(ans, i), NULL);
 		while (*s && *s != c)
 			s++;
-		i++;
 	}
 	return (ans);
 }
