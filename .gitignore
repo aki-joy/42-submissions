@@ -1,1 +1,7 @@
 a.out
+*.o
+null_test
+null_test_libft.c
+std_test
+std_txt
+ft.std_txtft_test/
