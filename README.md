@@ -2,76 +2,94 @@
 
 
 # Description
-今後の自分のっプロジェクトで使う関数をまとめたライブラリを作成しました。中身としては、標準ライブラリにある関数を再実装したもの、42内で使う自作関数という主に二つのジャンルに分けられます。
-一つ目の方の再実装の方に関しては、元の関数の動きとなるべく近い動きをするように作成しました。
+今後の自分のプロジェクトで使う関数をまとめたライブラリを作成しました。中身としましては大きく分けて二種類、標準ライブラリにある関数を再実装したもの、42内で使う自作関数という主に二つのジャンルに分けられます。
+一つ目の方の再実装の方に関しては、元の関数の動きとなるべく同じ動きをするように作成しました。
 二つ目の、自作関数の方では、subjectにあるdescriptionに則って、なるべく安全性を高めたコードを書きました。
-次に関数て主に扱う内容の説明です。
 
 # Instruction
-今回のプロジェクトにはmakefileがあるので、makeでオブジェクトファイルを作成します。make clean -> make fcleanをすると、実行ファイル、オブジェクトファイルともに消すことができます。
+今回のプロジェクトには`makefile`があります。
 
+ライブラリを作成するには以下のコマンドを使用します。
+```bash
+make
+```
+libft.aが作成されます。
+
+オブジェクトファイルを削除します。
+```bash
+make claen
+```
+その後実行ファイルを削除します。
+```bash
+make fclean
+```
 # Resources
 
-##　AIの使用用途に関して
-今回のプロジェクトで主にAIを使用した部分としましては、自作関数の定義チェック、動作確認の最終工程として使いました。また、わからない部分の補助的な教材としても使用しました。
+## AIの使用用途に関して
+使用用途としましては、関数の仕様、定義及び動作確認で主に使用しました。また理解を助ける補助的な役割としても一部使用しました。実装及び最終確認につきましては自分自身で行いました。
 
 ## その他
-man page
-MANPAGES.ORG
-IBM
-Qiita
-等を主に使用しました。使用用途としましては、関数のプロトタイプ等定義の確認です。その他Qiitaに関しましては、再実装の参考にした部分もあります。
-
-# 主な関数の説明
-
-## ft_is*の関数
-
-この文字がついてる関数に関しては、char型の文字が決められた範囲内にあるものかというのをチェックするものになっています。asciiによって判別しています。
-
-## ft_lst*の関数
-
-linked listを扱った関数です。新しいnodeを作成したり、追加、削除などといった動作をする関数を作成しました。
-nodeの型(構造体)はヘッダーファイルに書いてある通りです。
-
-## ft_str*の関数
-
-str系の関数は文字通り文字列を扱う関数郡で、ft_substr, ft_strjoin, ft_strtrim, ft_split, ft_strmapi, ft_striteriの6つの関数は標準関数ではなく自作関数です。
-以下に簡単に上の関数の仕様をまとめました。
-
-## ft_mem*の関数
-
-mem系の関数は文字列をメモリのバイト列として扱います。そのため何バイト分見るのかという指標が引数として渡される。
-
-## ft_*_fdの関数
-
-fdで終わる関数に関して、fdとはファイルディスクリプタであり、出力先のことです。つまり、いままでだったら標準出力としていたものをほかのところに出力できるというものです。　0, 1, 2のこの3つの数字は、システムの仕様として決まっている標準ファイルディスクリプタで、0は標準入力、1は標準出力、2は標準エラー出力です。
+- man page
+- MANPAGES.ORG
+- IBM
+- Qiita  
+等を主に使用しました。使用用途としましては、関数のプロトタイプ等定義の確認です。その他Qiitaに関しましては、再実装の参考にした部分もふくまれております。
 
 
+### 3. 関数一覧
 
-### ft_substr
-もとの文字列を、指定されたバイト数分だけ新しく確保したメモリに書き写す関数。
+### Character checks
+- ft_isalpha
+- ft_isdigit
+- ft_isalnum
+- ft_isascii
+- ft_isprint
 
-### ft_sttrjoin
-2つの文字列を確保したメモリに連結して書き写す関数。
+### String functions
+- ft_strlen
+- ft_strlcpy
+- ft_strlcat
+- ft_strchr
+- ft_strrchr
+- ft_strncmp
+- ft_strnstr
+- ft_strdup
+- ft_substr
+- ft_strjoin
+- ft_strtrim
+- ft_split
 
-### ft_strtrim
-もとの文字列から、指定された文字が文字列の先頭もしくは終わりにある場合、それを除いた文字列を作成し返す関数。
+### Memory functions
+- ft_memset
+- ft_bzero
+- ft_memcpy
+- ft_memmove
+- ft_memchr
+- ft_memcmp
+- ft_calloc
 
-### ft_split
-渡された長い文字列を、区切り文字が含まれている場合に区切り文字ごとにわけて、別の文字列として分割する関数。
+### Output functions
+- ft_putchar_fd
+- ft_putstr_fd
+- ft_putendl_fd
+- ft_putnbr_fd
 
-### ft_strmapi
-渡された文字列の各文字にたいして渡された関数を適用して、それを新しく文字列として作る関数。
+### Linked list functions
+- ft_lstnew
+- ft_lstadd_front
+- ft_lstsize
+- ft_lstlast
+- ft_lstadd_back
+- ft_lstdelone
+- ft_lstclear
+- ft_lstiter
+- ft_lstmap
 
-### ft_striteri
-渡された文字列の各文字にたいして渡された関数を適用して、もとの文字列を書き換える関数。
 
-
-
-main関数
-
-atoi
+### atoi
 ```c
+#include <stdio.h>
+
 int main(void)
 {
 	char nbr[] = "  213a45";
@@ -79,9 +97,10 @@ int main(void)
 	return (0);
 }
 ```
-
-itoa
+### itoa
 ```c
+#include <stdio.h>
+
 int	main(void)
 {
 	int nbr = 2147483647;
@@ -89,38 +108,24 @@ int	main(void)
 	return (0);
 }
 ```
-
-putnbr_fd
+### split
 ```c
-int main(void)
-{
-     int n = 123;
-     int fd = 1;
-     ft_putnbr_fd(n, fd);
-     return (0);
-}
-```
+#include <stdio.h>
 
- split
-```c
-int	main(int argc, char **argv)
+int	main(void)
 {
+	char	str[] = "hello world and see you later";
+	char	c = ' ';
 	char	**splited;
-	int		i;
-	int		count;
-
-	i = 0;
-	if (argc != 4)
-		return (1);
-	count = atoi(argv[3]);
-	splited = ft_split(argv[1], argv[2][0]);
-	while (i < count)
+	int		i = 0;
+	splited = ft_split(str, c);
+	while (splited[i])
 	{
 		printf("%s\n", splited[i]);
 		i++;
 	}
 	i = 0;
-	while (i <= count)
+	while (splited[i])
 	{
 		free(splited[i]);
 		i++;
@@ -129,27 +134,10 @@ int	main(int argc, char **argv)
 	return (0);
 }
 ```
-
-strjoin
+### strlcat
 ```c
 #include <stdio.h>
 
-int	main(int argc, char **argv)
-{
- 	char	*joined;
-
- 	if (argc != 3)
- 		return (1);
- 	joined = ft_strjoin(argv[1], argv[2]);
- 	printf("%s\n", joined);
- 	free(joined);
- 	return (0);
-}
-```
-
-strlcat
-```c
-#include <stdio.h>
 int	main(void)
 {
  	char	dest[10] = "abc";
@@ -161,36 +149,36 @@ int	main(void)
  	return (0);
 }
 ```
-
-strlcpy
+### strlcpy
 ```c
 #include <stdio.h>
 
 int	main(void)
 {
- 	char dest[10];
- 	char src[] = "hello world";
- 	size_t size = 4;
+ 	char	dest[10];
+ 	char	src[] = "hello world";
+ 	size_t	size = 4;
  	printf("%d\n", (int)ft_strlcpy(dest, src, size));
  	printf("%s", dest);
  	return (0);
 }
 ```
-
-strnstr
+### strnstr
 ```c
 #include <stdio.h>
 int main(void)
 {
- 	char heystack[] = "hello world";
- 	char needle[] = "ll";
- 	printf("%s", ft_strstr(heystack, needle));
+ 	char	haystack[] = "hello world";
+ 	char	needle[] = "ll";
+	int		len = 3;
+ 	printf("%s", ft_strnstr(haystack, needle, len));
  	return (0);
 }
 ```
-
- strtrim
+### strtrim
 ```c
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
  	char	*trimmed;
@@ -203,9 +191,10 @@ int	main(int argc, char **argv)
  	return (0);
 }
 ```
-
-substr
+### substr
 ```c
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
  	size_t		start;
@@ -224,5 +213,3 @@ int	main(int argc, char **argv)
  	return (0);
 }
 ```
-
- 
