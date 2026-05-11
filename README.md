@@ -86,6 +86,9 @@ make fclean
 - ft_lstmap
 
 
+## main関数
+下に幾つかのmain関数を用意しました。testerと別に個別でチェックしたい場合に使ってください。
+
 ### atoi
 ```c
 #include <stdio.h>
