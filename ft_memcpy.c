@@ -6,7 +6,7 @@
 /*   By: atajima <atajima@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 19:37:55 by atajima           #+#    #+#             */
-/*   Updated: 2026/05/11 16:04:58 by atajima          ###   ########.fr       */
+/*   Updated: 2026/05/11 21:08:49 by atajima          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	size_t				i;
 
+	if (dest == src || n == 0)
+		return (dest);
 	p = (unsigned char *)dest;
 	s = (const unsigned char *)src;
 	i = 0;

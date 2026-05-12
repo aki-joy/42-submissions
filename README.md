@@ -39,10 +39,10 @@ make fclean
 ### 3. 関数一覧
 
 ### Character checks
-- ft_isalpha
-- ft_isdigit
-- ft_isalnum
-- ft_isascii
+- ft_isalpha　アルファベットかどうかをチェックする
+- ft_isdigit　数字かどうかを判別する
+- ft_isalnum　アルファベットもしくは数字華道家のチェック
+- ft_isascii　
 - ft_isprint
 
 ### String functions
