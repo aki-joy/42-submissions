@@ -40,54 +40,54 @@ make fclean
 
 ### Character checks
 - ft_isalpha　アルファベットかどうかをチェックする
-- ft_isdigit　数字かどうかを判別する
-- ft_isalnum　アルファベットもしくは数字華道家のチェック
-- ft_isascii　
-- ft_isprint
+- ft_isdigit　数字かどうかをチェックする
+- ft_isalnum　アルファベットまたは数字かどうかをチェックする
+- ft_isascii　ASCII文字かどうかをチェックする
+- ft_isprint　表示可能な文字かどうかをチェックする
 
 ### String functions
-- ft_strlen
-- ft_strlcpy
-- ft_strlcat
-- ft_strchr
-- ft_strrchr
-- ft_strncmp
-- ft_strnstr
-- ft_strdup
-- ft_substr
-- ft_strjoin
-- ft_strtrim
-- ft_split
+- ft_strlen　文字列の長さを数える
+- ft_strlcpy　文字列を指定したサイズまでコピーする
+- ft_strlcat　文字列を指定したサイズまで連結する
+- ft_strchr　文字列の中から指定した文字を先頭から探す
+- ft_strrchr　文字列の中から指定した文字を後ろから探す
+- ft_strncmp　2つの文字列を指定した文字数だけ比較する
+- ft_strnstr　文字列の中から指定した文字列を指定範囲内で探す
+- ft_strdup　文字列を新しく確保したメモリにコピーする
+- ft_substr　文字列の一部を切り出して新しい文字列を作る
+- ft_strjoin　2つの文字列を連結して新しい文字列を作る
+- ft_strtrim　文字列の先頭と末尾から指定した文字を取り除く
+- ft_split　文字列を指定した区切り文字で分割する
 
 ### Memory functions
-- ft_memset
-- ft_bzero
-- ft_memcpy
-- ft_memmove
-- ft_memchr
-- ft_memcmp
-- ft_calloc
+- ft_memset　メモリ領域を指定した値で埋める
+- ft_bzero　メモリ領域を0で埋める
+- ft_memcpy　メモリ領域を指定したバイト数だけコピーする
+- ft_memmove　重なりがある可能性のあるメモリ領域をコピーする
+- ft_memchr　メモリ領域の中から指定した値を探す
+- ft_memcmp　2つのメモリ領域を指定したバイト数だけ比較する
+- ft_calloc　メモリを確保し、その中身を0で初期化する
 
 ### Output functions
-- ft_putchar_fd
-- ft_putstr_fd
-- ft_putendl_fd
-- ft_putnbr_fd
+- ft_putchar_fd　指定したファイルディスクリプタに1文字を出力する
+- ft_putstr_fd　指定したファイルディスクリプタに文字列を出力する
+- ft_putendl_fd　指定したファイルディスクリプタに文字列と改行を出力する
+- ft_putnbr_fd　指定したファイルディスクリプタに数値を出力する
 
 ### Linked list functions
-- ft_lstnew
-- ft_lstadd_front
-- ft_lstsize
-- ft_lstlast
-- ft_lstadd_back
-- ft_lstdelone
-- ft_lstclear
-- ft_lstiter
-- ft_lstmap
+- ft_lstnew　新しいリスト要素を作る
+- ft_lstadd_front　リストの先頭に要素を追加する
+- ft_lstsize　リストの要素数を数える
+- ft_lstlast　リストの最後の要素を取得する
+- ft_lstadd_back　リストの末尾に要素を追加する
+- ft_lstdelone　リストの要素を1つ削除する
+- ft_lstclear　リスト全体を削除する
+- ft_lstiter　リストの各要素に関数を適用する
+- ft_lstmap　リストの各要素に関数を適用して新しいリストを作る
 
 
 ## main関数
-下に幾つかのmain関数を用意しました。testerと別に個別でチェックしたい場合に使ってください。
+下に幾つかのmain関数を用意しました。testerとは別に個別でチェックしたい場合に使ってください。
 
 ### atoi
 ```c
